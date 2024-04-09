@@ -15,24 +15,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/pulse_settings" >
+
     <SwitchPreferenceCompat
         android:key="navbar_pulse_enabled"
         android:title="@string/show_navbar_pulse_title"
-        android:summary="@string/show_navbar_pulse_summary"/>
+        android:summary="@string/show_navbar_pulse_summary"
+        settings:layout="@layout/afterlab_card_preference_top" />
+
     <SwitchPreferenceCompat
         android:key="lockscreen_pulse_enabled"
         android:title="@string/show_lockscreen_pulse_title"
-        android:summary="@string/show_lockscreen_pulse_summary"/>
+        android:summary="@string/show_lockscreen_pulse_summary"
+        settings:layout="@layout/afterlab_card_preference_middle"/>
+
     <SwitchPreferenceCompat
         android:key="ambient_pulse_enabled"
         android:title="@string/show_ambient_pulse_title"
-        android:summary="@string/show_ambient_pulse_summary"/>
+        android:summary="@string/show_ambient_pulse_summary"
+        settings:layout="@layout/afterlab_card_preference_middle"/>
+
     <com.afterlife.support.preference.SecureSettingListPreference
         android:key="pulse_render_style"
         android:title="@string/pulse_render_mode_title"
         android:entries="@array/pulse_render_mode_entries"
         android:entryValues="@array/pulse_render_mode_values"
-        android:defaultValue="1"/>
+        android:defaultValue="1"
+        settings:layout="@layout/afterlab_card_preference_middle"/>
 
     <com.afterlife.support.preference.SecureSettingListPreference
         android:key="pulse_custom_gravity"
@@ -40,29 +48,43 @@
         android:entries="@array/pulse_custom_gravity_entries"
         android:entryValues="@array/pulse_custom_gravity_values"
         android:summary="%s"
-        android:defaultValue="0"/>
+        android:defaultValue="0"
+        settings:layout="@layout/afterlab_card_preference_middle"/>
 
     <com.afterlife.support.preference.SecureSettingSwitchPreference
         android:key="visualizer_center_mirrored"
         android:title="@string/visualizer_center_mirrored_title"
         android:summary="@string/visualizer_center_mirrored_summary"
-        android:defaultValue="false"/>
+        android:defaultValue="false"
+        settings:layout="@layout/afterlab_card_preference_middle"/>
+
+    <com.afterlife.support.preference.SecureSettingSwitchPreference
+        android:key="pulse_vertical_mirror"
+        android:title="@string/pulse_vertical_mirror_title"
+        android:summary="@string/pulse_vertical_mirror_summary"
+        android:defaultValue="false"
+        settings:layout="@layout/afterlab_card_preference_middle"/>
 
     <com.afterlife.support.preference.SecureSettingSwitchPreference
         android:key="pulse_smoothing_enabled"
         android:title="@string/pulse_smoothing_enabled_title"
         android:summary="@string/pulse_smoothing_enabled_summary"
-        android:defaultValue="false"/>
+        android:defaultValue="false"
+        settings:layout="@layout/afterlab_card_preference_middle"/>
     <com.afterlife.support.preference.SecureSettingListPreference
         android:key="pulse_color_mode"
         android:title="@string/pulse_color_mode_title"
         android:entries="@array/pulse_color_mode_entries"
         android:entryValues="@array/pulse_color_mode_values"
-        android:defaultValue="2"/>
+        android:defaultValue="2"
+        settings:layout="@layout/afterlab_card_preference_middle"/>
+
     <com.afterlife.support.colorpicker.SecureSettingColorPickerPreference
         android:key="pulse_color_user"
         android:title="@string/pulse_color_user_title"
-        android:defaultValue="0x92FFFFFF"/>
+        android:defaultValue="0x92FFFFFF"
+        settings:layout="@layout/afterlab_card_preference_bottom"/>
+
     <com.afterlife.support.preference.SecureSettingSeekBarPreference
         android:key="pulse_lavalamp_speed"
         android:title="@string/pulse_lavalamp_speed_title"
@@ -71,9 +93,11 @@
         settings:min="200"
         settings:interval="200"
         settings:units="@string/unit_milliseconds"/>
+        
     <PreferenceCategory
         android:key="pulse_fading_bars_category"
         android:title="@string/pulse_legacy_mode_advanced_category">
+
         <com.afterlife.support.preference.SecureSettingSeekBarPreference
             android:key="pulse_custom_dimen"
             android:title="@string/pulse_custom_dimen"
@@ -82,6 +106,7 @@
             settings:min="1"
             settings:units="@string/unit_pixels"
             android:dependency="pulse_fading_bars_category"/>
+
         <com.afterlife.support.preference.SecureSettingSeekBarPreference
             android:key="pulse_custom_div"
             android:title="@string/pulse_custom_div"
@@ -91,6 +116,7 @@
             settings:interval="2"
             settings:units="@string/unit_pixels"
             android:dependency="pulse_fading_bars_category"/>
+
         <com.afterlife.support.preference.SecureSettingSeekBarPreference
             android:key="pulse_filled_block_size"
             android:title="@string/pulse_filled_block_size"
@@ -99,6 +125,7 @@
             settings:min="4"
             settings:units="@string/unit_pixels"
             android:dependency="pulse_fading_bars_category"/>
+
         <com.afterlife.support.preference.SecureSettingSeekBarPreference
             android:key="pulse_empty_block_size"
             android:title="@string/pulse_empty_block_size"
@@ -107,6 +134,7 @@
             settings:min="0"
             settings:units="@string/unit_pixels"
             android:dependency="pulse_fading_bars_category"/>
+
         <com.afterlife.support.preference.SecureSettingSeekBarPreference
             android:key="pulse_custom_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
@@ -114,7 +142,9 @@
             android:max="6"
             settings:min="2"
             android:dependency="pulse_fading_bars_category"/>
+
     </PreferenceCategory>
+
     <PreferenceCategory
         android:key="pulse_2"
         android:title="@string/pulse_solid_dimen_category">
@@ -124,7 +154,8 @@
             android:title="@string/pulse_solid_units_rounded_title"
             android:summary="@string/pulse_solid_units_rounded_summary"
             android:defaultValue="false"
-            android:dependency="pulse_2"/>
+            android:dependency="pulse_2"
+            settings:layout="@layout/afterlab_card_preference_single"/>
 
         <com.afterlife.support.preference.SecureSettingSeekBarPreference
             android:key="pulse_solid_units_opacity"
@@ -133,6 +164,7 @@
             android:max="255"
             settings:min="0"
             android:dependency="pulse_2"/>
+
         <com.afterlife.support.preference.SecureSettingSeekBarPreference
             android:key="pulse_solid_units_count"
             android:title="@string/pulse_solid_units_count"
@@ -141,6 +173,7 @@
             settings:min="16"
             settings:interval="16"
             android:dependency="pulse_2"/>
+
         <com.afterlife.support.preference.SecureSettingSeekBarPreference
             android:key="pulse_solid_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
@@ -148,9 +181,12 @@
             android:max="6"
             settings:min="2"
             android:dependency="pulse_2"/>
+
     </PreferenceCategory>
+
     <com.android.settingslib.widget.FooterPreference
         android:key="pulse_settings_footer"
         android:selectable="false"
-        settings:searchable="false" />
+        settings:searchable="false"
+        settings:layout="@layout/afterlab_card_preference_single" />
 </PreferenceScreen>
