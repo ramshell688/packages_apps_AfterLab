@@ -36,4 +36,8 @@
     <dimen name="sound_engine_label_bottom">12dp</dimen>
     <dimen name="sound_engine_label_start">12dp</dimen>
     <dimen name="selected_card_border_width">1.5dp</dimen>
+
+    <!-- SwitchBar sub settings margin start / end -->
+    <dimen name="switchbar_subsettings_margin_start">72dp</dimen>
+    <dimen name="switchbar_subsettings_margin_end">16dp</dimen>
 </resources>
