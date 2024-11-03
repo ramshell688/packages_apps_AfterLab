@@ -333,10 +333,12 @@
     <string-array name="qs_custom_style_entries">
         <item>@string/qs_custom_style_anim</item>
         <item>@string/qs_custom_style_hyper</item>
+        <item>@string/qs_custom_style_ios</item>
     </string-array>
     <string-array name="qs_custom_style_values">
         <item>0</item>
         <item>1</item>
+        <item>2</item>
     </string-array>
 
     <!-- Tiles animation style -->

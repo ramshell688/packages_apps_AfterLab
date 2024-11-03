@@ -628,6 +628,7 @@
     <string name="qs_custom_style_anim">Animation Style</string>
     <string name="qs_custom_style_hyper">HyperOS Style</string>
     <string name="qs_custom_style_title">Select Your Style</string>
+    <string name="qs_custom_style_ios">iOS Style</string>
     <string name="qs_custom_summary">switch for enable Afterlife qs custom</string>
     <string name="qs_custom_title">Custom Qs Style</string>
 
