@@ -36,6 +36,13 @@
             android:defaultValue="1"
             settings:layout="@layout/afterlab_card_preference_middle" />
 
+        <com.afterlife.support.preference.SystemSettingSwitchPreference
+            android:defaultValue="true"
+            android:key="qs_dual_tone"
+            android:summary="@string/qs_dual_tone_summary"
+            android:title="@string/qs_dual_tone_title" 
+            settings:layout="@layout/afterlab_card_preference_middle" />
+
         <com.afterlife.support.preference.SecureSettingListPreference
             android:key="qs_tile_shape"
             android:title="@string/qs_tile_shape"
