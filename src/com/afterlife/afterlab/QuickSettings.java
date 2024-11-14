@@ -51,18 +51,34 @@ import java.util.List;
 public class QuickSettings extends SettingsPreferenceFragment 
             implements Preference.OnPreferenceChangeListener {
 
+    private static final String KEY_AFL_QS_CUSTOM  = "qs_custom_header_style";
+    private SystemSettingListPreference mAflQsCustom;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.category_quicksettings);
         PreferenceScreen prefSet = getPreferenceScreen();
 
+        mAflQsCustom = findPreference(KEY_AFL_QS_CUSTOM);
+        mAflQsCustom.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        Context mContext = getActivity().getApplicationContext();
+        ContentResolver resolver = mContext.getContentResolver();
+
+        if (preference == mAflQsCustom) {
+        int value = Integer.parseInt((String) newValue);
+        if (value == 1 || value == 2) {
+            Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 0, UserHandle.USER_CURRENT);
+            }
+            return true;
+        }
         return false;
-    }  
+    } 
     
     @Override
     public int getMetricsCategory() {
