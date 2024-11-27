@@ -31,7 +31,6 @@ import android.provider.Settings;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
@@ -52,7 +51,7 @@ public class UdfpsSettings extends SettingsPreferenceFragment implements
     private static final String UDFPS_CUSTOMIZATION = "udfps_customization";
     private static final String KEY_UDFPS_ICONS = "udfps_icon_picker";
 
-    private PreferenceCategory mUdfpsCustomization;
+    private Preference mUdfpsCustomization;
     private Preference mUdfpsIcons;
 
     @Override
@@ -64,7 +63,7 @@ public class UdfpsSettings extends SettingsPreferenceFragment implements
 	Resources resources = getResources();
 	final boolean udfpsResPkgInstalled = AfterlifeUtils.isPackageInstalled(getContext(),
         	"com.afterlife.udfps.resources");
-	mUdfpsCustomization = (PreferenceCategory) findPreference(UDFPS_CUSTOMIZATION);
+	mUdfpsCustomization = findPreference(UDFPS_CUSTOMIZATION);
 	mUdfpsIcons = findPreference(KEY_UDFPS_ICONS); // Change cast to findPreference
 	if (mUdfpsCustomization != null && !udfpsResPkgInstalled) {
 	    prefSet.removePreference(mUdfpsCustomization);

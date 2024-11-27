@@ -33,7 +33,6 @@ import android.provider.Settings;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreferenceCompat;
@@ -58,8 +57,6 @@ import java.util.List;
 @SearchIndexable
 public class LockScreen extends SettingsPreferenceFragment 
             implements Preference.OnPreferenceChangeListener {
-        private static final String UDFPS_CATEGORY = "udfps_category";
-        private PreferenceCategory mUdfpsCategory;
         private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
         private static final String KEY_WEATHER = "lockscreen_weather_enabled";
 
@@ -75,12 +72,7 @@ public class LockScreen extends SettingsPreferenceFragment
         PreferenceScreen prefSet = getPreferenceScreen();
         final Resources res = getResources();
         final PreferenceScreen prefScreen = getPreferenceScreen();
-	mUdfpsCategory = findPreference(UDFPS_CATEGORY);
-	//Handle NPE on UdfpsCategory being null
-        if (mUdfpsCategory != null && !CustomUdfpsUtils.hasUdfpsSupport(getContext())) {
-            prefScreen.removePreference(mUdfpsCategory);
-        }
-        
+
     mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
 
         mWeather = (Preference) findPreference(KEY_WEATHER);

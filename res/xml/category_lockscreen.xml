@@ -102,21 +102,14 @@
             android:title="@string/fprint_sucess_vib_title"
             android:summary="@string/fprint_sucess_vib_summary"
             android:persistent="false"
-            settings:layout="@layout/afterlab_card_preference_bottom"
+            settings:layout="@layout/afterlab_card_preference_middle"
             android:defaultValue="true" />
-
-     </PreferenceCategory>
-
-     <!-- Udfps options -->
-    <PreferenceCategory
-        android:key="udfps_category"
-        android:title="@string/udfps_category">
 
         <Preference
             android:key="udfps_settings"
             android:title="@string/udfps_settings_title"
             android:summary="@string/udfps_settings_summary"
-            settings:layout="@layout/afterlab_card_preference_single"
+            settings:layout="@layout/afterlab_card_preference_bottom"
             android:fragment="com.afterlife.afterlab.fragments.UdfpsSettings" />
 
     </PreferenceCategory>
