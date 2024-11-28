@@ -97,20 +97,20 @@
             settings:layout="@layout/afterlab_card_preference_top"
             android:defaultValue="true" />
 
+          <Preference
+            android:key="udfps_settings"
+            android:title="@string/udfps_settings_title"
+            android:summary="@string/udfps_settings_summary"
+            settings:layout="@layout/afterlab_card_preference_middle"
+            android:fragment="com.afterlife.afterlab.fragments.UdfpsSettings" />
+
           <SwitchPreferenceCompat
             android:key="fingerprint_success_vib"
             android:title="@string/fprint_sucess_vib_title"
             android:summary="@string/fprint_sucess_vib_summary"
             android:persistent="false"
-            settings:layout="@layout/afterlab_card_preference_middle"
-            android:defaultValue="true" />
-
-        <Preference
-            android:key="udfps_settings"
-            android:title="@string/udfps_settings_title"
-            android:summary="@string/udfps_settings_summary"
             settings:layout="@layout/afterlab_card_preference_bottom"
-            android:fragment="com.afterlife.afterlab.fragments.UdfpsSettings" />
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
